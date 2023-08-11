@@ -1,0 +1,21 @@
+{
+  "name": "@saeris/markdown-denden-furigana",
+  "displayName": "Markdown DenDen Furigana",
+  "description": "Adds denden markdown furigana support to VSCode's markdown preview",
+  "version": "0.0.1",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "markdown.markdownItPlugins": true
+  },
+  "dependencies": {
+    "markdown-it-ruby": "^0.1.1"
+  }
+}
