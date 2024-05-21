@@ -1,7 +1,5 @@
-module.exports = {
-  activate: () => ({
-    extendMarkdownIt(md) {
-      return md.use(require("markdown-it-ruby"));
-    },
-  }),
-};
+import ruby from "markdown-it-ruby";
+
+export const activate = () => ({
+  extendMarkdownIt: (md) => md.use(ruby),
+});

@@ -2,7 +2,7 @@
   "name": "markdown-denden-furigana",
   "displayName": "Markdown DenDen Furigana",
   "description": "Adds denden markdown furigana support to VSCode's markdown preview",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "publisher": "saeris",
   "repository": {
@@ -16,20 +16,23 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "markdown.markdownItPlugins": true
   },
   "scripts": {
-    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "build": "vsce package",
     "esbuild-base": "esbuild ./extension.js --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
     "esbuild": "npm run esbuild-base -- --sourcemap",
-    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch"
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "release": "vsce publish",
+    "vscode:prepublish": "npm run esbuild"
   },
   "dependencies": {
     "markdown-it-ruby": "^0.1.1"
   },
   "devDependencies": {
+    "@vscode/vsce": "^2.21.0",
     "esbuild": "^0.19.0"
   }
 }
